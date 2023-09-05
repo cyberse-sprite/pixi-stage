@@ -1,0 +1,19 @@
+{
+    "success": true,
+    "message": "",
+    "data": {
+        "nickname": "用户名称",
+        "intro": "我是用户的个人简介",
+        "links": [
+            {
+                "plat": "微博",
+                "link": "https://weibo.com"
+            },
+            {
+                "plat": "推特",
+                "link": "https://twitter.com"
+            }
+        ],
+        "avatar": "/img/user/1.png"
+    }
+}
