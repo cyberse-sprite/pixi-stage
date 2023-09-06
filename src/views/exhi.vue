@@ -3,7 +3,7 @@ import { onMounted, ref } from 'vue'
 import { NDrawer, NSpace } from 'naive-ui'
 import { RouterView } from 'vue-router'
 import { ApiGetExhi } from '@/api/exhi';
-import { NButton, NResult } from 'naive-ui';
+import { NButton, NResult, NLoadingBarProvider } from 'naive-ui';
 import Exhi from '@/exhi/exhi'
 import { useRouter, useRoute } from 'vue-router'
 import { usePageStore } from '@/stores/page';
@@ -14,6 +14,8 @@ const route = useRoute()
 const page = usePageStore()
 const exhiid = ref('')
 const width = ref(0)
+const drawerRef = ref()
+
 
 const computedWidth = () => {
   let w = (window.innerWidth - 10)
@@ -38,8 +40,8 @@ onMounted(() => {
 })
 
 window.callDrawer = (type: string, id: string) => {
-  router.push(`/exhi/${route.params['exhi']}/${type}/${id}`)
   page.drawer = true
+  router.push(`/exhi/${route.params['exhi']}/${type}/${id}`)
 }
 
 const enter = () => {
@@ -76,7 +78,9 @@ const shot = () => {
   </div>
   <n-drawer v-model:show="page.drawer" v-model:width="width">
     <div class="drawer-container">
-      <RouterView />
+      <n-loading-bar-provider>
+        <RouterView />
+      </n-loading-bar-provider>
     </div>
   </n-drawer>
 </template>

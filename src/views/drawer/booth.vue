@@ -3,8 +3,11 @@ import { ApiGetBooth } from "@/api/exhi";
 import { getResUrl } from "@/exhi/design";
 import { usePageStore } from "@/stores/page";
 import { NButton, NImage } from "naive-ui";
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useRoute } from "vue-router";
+
+import { useLoadingBar } from 'naive-ui'
+const loadingBar = useLoadingBar()
 
 const page = usePageStore()
 const route = useRoute()
@@ -22,10 +25,15 @@ interface User {
     intro?: string
 }
 
+onMounted(() => {
+    loadingBar.start()
+})
+
 const data = ref(<User>{})
 
 ApiGetBooth(route.params['id']).then((res) => {
     data.value = res as unknown as User
+    loadingBar.finish()
 })
 </script>
 
@@ -58,7 +66,8 @@ ApiGetBooth(route.params['id']).then((res) => {
                 <a :href="item.link" target="_blank">
                     <div class="item-box">
                         <div style="margin-right: 16px;" v-if="item.img">
-                            <n-image :src="getResUrl(`${item.img}`)" object-fit="contain" width="160" height="160"></n-image>
+                            <n-image :src="getResUrl(`${item.img}`)" object-fit="contain" width="160"
+                                height="160"></n-image>
                         </div>
                         <div class="item-text">
                             <div style="font-size: large;color: #222;">{{ item.title }}</div>
