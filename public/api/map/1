@@ -2,7 +2,6 @@
     "success": true,
     "message": "",
     "data": {
-        "api": "ws://localhost:8080/websocket",
         "title": "第一张地图",
         "materials": [
             {
