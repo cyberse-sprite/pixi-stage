@@ -9,7 +9,7 @@ const router = createRouter({
       redirect: '/main',
     },
     {
-      path: '/',
+      path: '/:exhi',
       name: 'exhi',
       component: ExhiView,
       children: [
@@ -19,12 +19,12 @@ const router = createRouter({
           component: () => import('../views/drawer/main.vue')
         },
         {
-          path: 'user',
+          path: 'user/:id',
           name: 'user',
           component: () => import('../views/drawer/user.vue')
         },
         {
-          path: 'booth',
+          path: 'booth/:id',
           name: 'booth',
           component: () => import('../views/drawer/booth.vue')
         }

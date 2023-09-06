@@ -3,8 +3,10 @@ import { ApiGetUser } from "@/api/exhi";
 import { usePageStore } from "@/stores/page";
 import { NAvatar, NButton } from "naive-ui";
 import { ref } from 'vue'
+import { useRoute } from "vue-router";
 
 const page = usePageStore()
+const route = useRoute()
 
 interface User {
     avatar?: string
@@ -18,7 +20,7 @@ interface User {
 
 const data = ref(<User>{})
 
-ApiGetUser(1).then((res) => {
+ApiGetUser(route.params['id']).then((res) => {
     data.value = res as unknown as User
 })
 </script>
@@ -33,6 +35,7 @@ ApiGetUser(1).then((res) => {
             </div>
             <div class="head-content">
                 <div class="avatar-box">
+                    <n-skeleton height="128px" circle />
                     <n-avatar :src="data.avatar" :size="128" style="border:1px #eee solid" round></n-avatar>
                 </div>
                 <div class="head-text">

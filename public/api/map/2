@@ -50,11 +50,11 @@
                 "content": [
                     {
                         "text": "用户信息",
-                        "onclick": "window.callDrawer('/user')"
+                        "onclick": "window.callDrawer('user',1)"
                     },
                     {
                         "text": "摊位信息",
-                        "onclick": "window.callDrawer('/booth')"
+                        "onclick": "window.callDrawer('booth',1)"
                     },
                     {
                         "text": "测试对话",

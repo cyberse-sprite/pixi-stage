@@ -3,8 +3,10 @@ import { ApiGetBooth } from "@/api/exhi";
 import { usePageStore } from "@/stores/page";
 import { NButton, NImage } from "naive-ui";
 import { ref } from 'vue'
+import { useRoute } from "vue-router";
 
 const page = usePageStore()
+const route = useRoute()
 
 interface User {
     pos?: string
@@ -21,7 +23,7 @@ interface User {
 
 const data = ref(<User>{})
 
-ApiGetBooth(1).then((res) => {
+ApiGetBooth(route.params['id']).then((res) => {
     data.value = res as unknown as User
 })
 </script>

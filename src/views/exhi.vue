@@ -28,17 +28,17 @@ const computedWidth = () => {
 window.addEventListener('resize', computedWidth)
 
 onMounted(() => {
-  if (!route.query['exhi']) return
-  exhiid.value = <string>route.query['exhi']
-  ApiGetExhi(route.query['exhi']).then((res) => {
+  if (!route.params['exhi']) return
+  exhiid.value = <string>route.params['exhi']
+  ApiGetExhi(route.params['exhi']).then((res) => {
     window.exhi = new Exhi(res as unknown as PsExhi)
     computedWidth()
   })
 })
 
-window.callDrawer = (path: string) => {
-  router.push(path + `?exhi=${route.query['exhi']}`)
-  page.drawer = !page.drawer
+window.callDrawer = (type: string, id: string) => {
+  router.push(`/${route.params['exhi']}/${type}/${id}`)
+  page.drawer = true
 }
 
 const enter = () => {
