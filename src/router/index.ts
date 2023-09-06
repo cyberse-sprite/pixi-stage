@@ -6,10 +6,10 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      component: ExhiView,
+      redirect: '/exhi/1'
     },
     {
-      path: '/:exhi',
+      path: '/exhi/:exhi',
       name: 'exhi',
       component: ExhiView,
       children: [
