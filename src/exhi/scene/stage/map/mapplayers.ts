@@ -96,7 +96,7 @@ export default class MapPlayers {
             if (dx * dx + dy * dy < 4) {
                 endMove()
             }
-            console.log(dx, dy, this.players[data.id].x, this.players[data.id].y, data.x, data.y)
+            //console.log(dx, dy, this.players[data.id].x, this.players[data.id].y, data.x, data.y)
             const mx = ps * getDirection(dx)
             const my = ps * getDirection(dy)
             if (Math.abs(dx) > Math.abs(dy)) {

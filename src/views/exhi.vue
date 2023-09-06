@@ -32,7 +32,6 @@ window.addEventListener('resize', computedWidth)
 onMounted(() => {
   if (!route.params['exhi']) return
   ApiGetExhi(route.params['exhi']).then((res) => {
-    console.log("!!")
     exhiid.value = <string>route.params['exhi']
     window.exhi = new Exhi(res as unknown as PsExhi)
     computedWidth()

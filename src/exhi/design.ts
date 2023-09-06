@@ -14,7 +14,6 @@ export const getResUrl = (str: string) => {
     if (import.meta.env.VITE_RES_URL) {
         if (str.length > 0 && str[0] == '/' && (str.length > 1 ? (str[1] != '/') : true)) {
             const path = `${import.meta.env.VITE_RES_URL}${str}`
-            console.log(path)
             return path
         }
     }
