@@ -81,7 +81,7 @@ export default class SceneStage extends Scene {
             this.outline()
         } else {
             this.onlineButton.onPress.connect(() => {
-                message(this.exhi,'本地图未指定服务接口，仅支持离线模式')
+                message(this.exhi, '本地图未指定服务接口，仅支持离线模式')
             })
         }
 
@@ -126,6 +126,15 @@ export default class SceneStage extends Scene {
         }
 
         this.ui.addChild(this.onlineButton, this.shotButton)
+
+        if (!isTouchDevice()) {
+            const inputfun = () => {
+                const value = prompt("请输入内容", "")
+                if (value)
+                    this.input.value = value
+            }
+            this.input.addEventListener('click', inputfun)
+        }
     }
     pressPop() {
         if (this.socket.isConnected()) {

@@ -5,7 +5,7 @@ import Charactor from "../charactor";
 import Player from "../player";
 
 import SceneSelectMap from "./SceneSelectMap";
-import { abh, abw, backBox, backButton, style } from "../design";
+import { abh, abw, backBox, backButton, isTouchDevice, style } from "../design";
 import { message } from "../message";
 
 export default class SceneSelectChar extends Scene {
@@ -24,6 +24,15 @@ export default class SceneSelectChar extends Scene {
 
         let x = (abw - 144 * 4 - 132) / 2
         let y = (abh - 144 * 2) / 2
+
+        if (!isTouchDevice()) {
+            const inputfun = () => {
+                const value = prompt("请输入昵称", "")
+                if (value)
+                    input.value = value
+            }
+            input.addEventListener('click', inputfun)
+        }
 
         exhi.loadSheets(exhi.data.charactors).then(() => {
             let index = 0
