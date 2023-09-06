@@ -42,7 +42,7 @@ window.callDrawer = (type: string, id: string) => {
 }
 
 const enter = () => {
-  window.location.href = '/main?exhi=1'
+  window.location.href = '/1'
 }
 
 const shot = () => {

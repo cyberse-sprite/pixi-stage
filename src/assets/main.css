@@ -10,5 +10,6 @@
 
 @font-face {
   font-family: 'Cubic';
-  src: url('/Cubic_11_1.013_R.woff2');
+  src: url('/font.woff2');
+  font-display: block;
 }

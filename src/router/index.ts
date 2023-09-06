@@ -6,7 +6,7 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      redirect: '/main',
+      component: ExhiView,
     },
     {
       path: '/:exhi',

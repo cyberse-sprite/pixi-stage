@@ -1,7 +1,7 @@
 import type { PsExhi } from './define/exhi';
 import SceneStart from './scene/SceneStart';
 import { abh, abw, backColor } from './design';
-import { Container, Application, Spritesheet, Graphics, Assets, Text } from 'pixi.js';
+import { Container, Application, Spritesheet, Graphics, Assets, Text, TextStyle } from 'pixi.js';
 import SceneSelectChar from './scene/SceneSelectChar';
 import { message } from './message';
 
@@ -42,8 +42,8 @@ export default class Exhi {
 
         Text.defaultAutoResolution = false
         Text.defaultResolution = 1
-        this.start()
 
+        this.start()
     }
     resize() {
         let w = this.app.screen.width
