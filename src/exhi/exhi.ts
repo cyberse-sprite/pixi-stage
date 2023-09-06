@@ -1,6 +1,6 @@
 import type { PsExhi } from './define/exhi';
 import SceneStart from './scene/SceneStart';
-import { abh, abw, backColor } from './design';
+import { abh, abw, backColor, getResUrl } from './design';
 import { Container, Application, Spritesheet, Graphics, Assets, Text, TextStyle } from 'pixi.js';
 import SceneSelectChar from './scene/SceneSelectChar';
 import { message } from './message';
@@ -104,7 +104,7 @@ export default class Exhi {
     }
 
     async onLoad(src: string) {
-        const ma = await Assets.load(src)
+        const ma = await Assets.load(getResUrl(src))
         const w = ma.width
         const h = ma.height
         const sheet = {

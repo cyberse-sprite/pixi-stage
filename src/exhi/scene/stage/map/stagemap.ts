@@ -4,7 +4,7 @@ import type { PsMap } from "../../../define/map";
 import type Player from "../../../player";
 import MapAccess from "./mapaccess";
 import MapEvent from "./mapevent";
-import { abh, abw } from "../../../design";
+import { abh, abw, getResUrl } from "../../../design";
 import type SceneStage from "../SceneStage";
 import MapPlayers from "./mapplayers";
 
@@ -77,7 +77,7 @@ export default class StageMap extends Container {
     }
     async loadMaterials() {
         for (let item of this.data.materials) {
-            const ma = await Assets.load(item.src)
+            const ma = await Assets.load(getResUrl(item.src))
             const target = Sprite.from(ma)
             target.x = item.pos[0]
             target.y = item.pos[1]

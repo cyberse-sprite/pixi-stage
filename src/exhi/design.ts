@@ -10,6 +10,17 @@ export function isTouchDevice() {
     return 'ontouchstart' in document.documentElement;
 }
 
+export const getResUrl = (str: string) => {
+    if (import.meta.env.VITE_RES_URL) {
+        if (str.length > 0 && str[0] == '/' && (str.length > 1 ? (str[1] != '/') : true)) {
+            const path = `${import.meta.env.VITE_RES_URL}${str}`
+            console.log(path)
+            return path
+        }
+    }
+    return str
+}
+
 export const backBox = (w?: number, h?: number) => {
     const g = new Graphics().lineStyle(2, 0xeeeeee, 1).beginFill(0x000000, 0.8)
     if (w && h)

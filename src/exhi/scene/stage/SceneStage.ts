@@ -6,7 +6,7 @@ import type { PsMap } from "../../define/map";
 import { FancyButton, Input } from "@pixi/ui";
 import Dialog from "../../dialog";
 import StageMap from "./map/stagemap";
-import { abh, abw, backBox, backButton, isTouchDevice, style } from "../../design";
+import { abh, abw, backBox, backButton, getResUrl, isTouchDevice, style } from "../../design";
 import imgShot from '@/assets/screenshot-2-fill.png'
 import StageSocket from "./stagesocket";
 import { message } from "@/exhi/message";
