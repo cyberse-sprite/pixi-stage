@@ -37,7 +37,8 @@ export default class Dialog extends Container {
     load(src: any) {
         const _this = this
         ApiGetScript(src).then((res) => {
-            _this.script = res as unknown as Array<any>
+            //@ts-ignore
+            _this.script = res.script
             _this.nameSprite.text = ''
             _this.content.text = ''
             _this.timeSlot = 0
