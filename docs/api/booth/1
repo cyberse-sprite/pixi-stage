@@ -1,0 +1,44 @@
+{
+    "success": true,
+    "message": "",
+    "data": {
+        "pos": "A11",
+        "title": "我是摊位名称",
+        "intro": "我是摊位介绍",
+        "items": [
+            {
+                "title": "一个物品",
+                "link": "https://baidu.com",
+                "intro": "一个物品介绍",
+                "img": "/img/item/1.png"
+            },
+            {
+                "title": "两个物品",
+                "link": "https://baidu.com",
+                "intro": "俩个物品介绍"
+            },
+            {
+                "title": "一个物品",
+                "link": "https://baidu.com",
+                "intro": "一个物品介绍",
+                "img": "/img/item/2.png"
+            },
+            {
+                "title": "两个物品",
+                "link": "https://baidu.com",
+                "intro": "俩个物品介绍"
+            },
+            {
+                "title": "一个物品",
+                "link": "https://baidu.com",
+                "intro": "一个物品介绍",
+                "img": "/img/item/3.png"
+            },
+            {
+                "title": "两个物品",
+                "link": "https://baidu.com",
+                "intro": "俩个物品介绍"
+            }
+        ]
+    }
+}

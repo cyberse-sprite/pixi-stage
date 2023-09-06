@@ -1,0 +1,77 @@
+{
+    "success": true,
+    "message": "",
+    "data": {
+        "title": "第一张地图",
+        "materials": [
+            {
+                "layer": 0,
+                "pos": [
+                    0,
+                    0
+                ],
+                "src": "/img/material/b.png"
+            },
+            {
+                "layer": 1,
+                "pos": [
+                    200,
+                    500
+                ],
+                "src": "/img/material/a.png",
+                "access": "/img/material/a_a.png"
+            },
+            {
+                "layer": 1,
+                "pos": [
+                    400,
+                    500
+                ],
+                "src": "/img/material/a.png",
+                "access": "/img/material/a_a.png"
+            },
+            {
+                "layer": 1,
+                "pos": [
+                    600,
+                    500
+                ],
+                "src": "/img/material/a.png",
+                "access": "/img/material/a_a.png"
+            },
+            {
+                "layer": 1,
+                "pos": [
+                    2000,
+                    1000
+                ],
+                "src": "/img/material/board.png",
+                "access": "/img/material/board_a.png"
+            },
+            {
+                "layer": 1,
+                "pos": [
+                    2000,
+                    2000
+                ],
+                "src": "/img/material/car.png",
+                "access": "/img/material/car_a.png"
+            },
+            {
+                "layer": 1,
+                "pos": [
+                    1000,
+                    900
+                ],
+                "src": "/img/material/gate.png",
+                "access": "/img/material/gate_a.png"
+            }
+        ],
+        "birth": [
+            136,
+            852
+        ],
+        "access": "",
+        "events": []
+    }
+}
