@@ -21,7 +21,7 @@ const { message } = createDiscreteApi(
 )
 
 const instance = axios.create({
-    baseURL: '/api/',
+    baseURL: '/pixi-stage/api/',
     timeout: 5000
 });
 
