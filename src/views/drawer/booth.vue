@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ApiGetBooth } from "@/api/exhi";
+import { getResUrl } from "@/exhi/design";
 import { usePageStore } from "@/stores/page";
 import { NButton, NImage } from "naive-ui";
 import { ref } from 'vue'
@@ -57,7 +58,7 @@ ApiGetBooth(route.params['id']).then((res) => {
                 <a :href="item.link" target="_blank">
                     <div class="item-box">
                         <div style="margin-right: 16px;" v-if="item.img">
-                            <n-image :src="item.img" object-fit="contain" width="160" height="160"></n-image>
+                            <n-image :src="getResUrl(`${item.img}`)" object-fit="contain" width="160" height="160"></n-image>
                         </div>
                         <div class="item-text">
                             <div style="font-size: large;color: #222;">{{ item.title }}</div>

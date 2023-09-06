@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ApiGetUser } from "@/api/exhi";
+import { getResUrl } from "@/exhi/design";
 import { usePageStore } from "@/stores/page";
 import { NAvatar, NButton } from "naive-ui";
 import { ref } from 'vue'
@@ -35,7 +36,7 @@ ApiGetUser(route.params['id']).then((res) => {
             </div>
             <div class="head-content">
                 <div class="avatar-box">
-                    <n-avatar :src="data.avatar" :size="128" style="border:1px #eee solid" round></n-avatar>
+                    <n-avatar :src="getResUrl(`${data.avatar}`)" :size="128" style="border:1px #eee solid" round></n-avatar>
                 </div>
                 <div class="head-text">
                     <div style="font-size: large;color: #fff;">
