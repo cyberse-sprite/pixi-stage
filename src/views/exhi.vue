@@ -58,7 +58,7 @@ const shot = () => {
       <div style="flex: 1;"></div>
       <div style="margin-right: 23px;">
         <n-space>
-          <n-button>Github</n-button>
+          <n-button tag="a" href="https://github.com/cyberse-sprite/pixi-stage" target="_blank">Github</n-button>
           <n-button @click="shot">截图</n-button>
         </n-space>
       </div>

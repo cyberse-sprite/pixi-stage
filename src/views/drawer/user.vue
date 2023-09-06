@@ -35,7 +35,6 @@ ApiGetUser(route.params['id']).then((res) => {
             </div>
             <div class="head-content">
                 <div class="avatar-box">
-                    <n-skeleton height="128px" circle />
                     <n-avatar :src="data.avatar" :size="128" style="border:1px #eee solid" round></n-avatar>
                 </div>
                 <div class="head-text">

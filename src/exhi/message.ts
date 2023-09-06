@@ -1,5 +1,5 @@
 import { Text } from "pixi.js";
-import { backBox, dialogStyle } from "./design";
+import { abw, backBox, dialogStyle } from "./design";
 import { FancyButton } from "@pixi/ui";
 import type Exhi from "./exhi";
 
@@ -11,7 +11,7 @@ export const message = (exhi: Exhi, content: string, color: string = 'white') =>
         text: text
     })
     button.anchor.set(0.5, 0)
-    button.x = exhi.app.view.width / 2
+    button.x = abw / 2
     button.y = -button.height
     exhi.content.addChild(button)
     const fade = (d: number) => {
