@@ -55,7 +55,7 @@ export default class SceneSelectChar extends Scene {
                         message(this.exhi, '昵称过长，请重新输入')
                         return
                     }
-                    exhi.loading.visible = true
+                    exhi.setLoading()
                     const player = new Player(input.value, exhi.sheets[p])
                     player.src = p
                     player.setName()
@@ -70,7 +70,7 @@ export default class SceneSelectChar extends Scene {
                 this.addChild(button)
                 index++
             }
-            exhi.loading.visible = false
+            exhi.cancelLoading()
         })
     }
 }

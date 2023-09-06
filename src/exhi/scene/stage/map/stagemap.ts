@@ -65,14 +65,14 @@ export default class StageMap extends Container {
             } else {
                 this.y = ny
             }
-            exhi.loading.visible = false
+            exhi.cancelLoading()
             this.access = new MapAccess(this.layer[0].width, this.layer[0].height)
             for (let item of this.data.materials) {
                 if (item.access)
                     this.access.load(item.access, item.pos[0], item.pos[1])
             }
             this.setControllable()
-            exhi.loading.visible = false
+            exhi.cancelLoading()
         })
     }
     async loadMaterials() {

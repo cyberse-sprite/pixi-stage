@@ -43,7 +43,7 @@ export default class SceneStart extends Scene {
             ]
         })
         button.onPress.connect(() => {
-            exhi.loading.visible = true
+            exhi.setLoading()
             exhi.loadScene(new SceneSelectChar(exhi))
         })
         this.addChild(box)
@@ -60,6 +60,6 @@ export default class SceneStart extends Scene {
         intro.y = abh - 25
         intro.anchor.set(0, 1)
         this.addChild(intro)
-        exhi.loading.visible = false
+        exhi.cancelLoading()
     }
 }

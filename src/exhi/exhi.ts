@@ -1,6 +1,6 @@
 import type { PsExhi } from './define/exhi';
 import SceneStart from './scene/SceneStart';
-import { abh, abw, backColor, getResUrl } from './design';
+import { abh, abw, backColor, getResUrl, style } from './design';
 import { Container, Application, Spritesheet, Graphics, Assets, Text, TextStyle } from 'pixi.js';
 import SceneSelectChar from './scene/SceneSelectChar';
 import { message } from './message';
@@ -14,6 +14,8 @@ export default class Exhi {
     data: PsExhi
 
     loading = new Graphics().beginFill(backColor).drawRect(0, 0, abw, abh)
+    setLoading: any
+    cancelLoading: any
 
     id = `${new Date().getTime()}`
 
@@ -32,6 +34,42 @@ export default class Exhi {
         stage.appendChild(this.app.view);
 
         this.container.addChild(this.content)
+
+        const c = <Container[]>[]
+        const cc = new Container()
+        const text = new Text('加载中', style)
+        text.anchor.set(0, 0.5)
+
+        for (let i = 0; i < 3; i++) {
+            const d = new Graphics().lineStyle(2, '#eee', 0.8).drawCircle(0, 0, 4)
+            d.x = 24 * (i + 1)
+            c.push(d)
+            cc.addChild(d)
+        }
+
+        c.push(text)
+        cc.addChild(text)
+        text.x = 24 * 4 - 4
+
+        cc.x = (abw - cc.width) / 2
+        cc.y = (abh - cc.height) / 2
+        const loading = (d: number) => {
+            for (let i = 0; i < 4; i++) {
+                c[i].y = Math.sin(new Date().getTime() / 400 + i) * 10
+            }
+        }
+
+        this.setLoading = () => {
+            this.app.ticker.add(loading)
+            this.loading.visible = true
+        }
+        this.cancelLoading = () => {
+            this.app.ticker.remove(loading)
+            this.loading.visible = false
+        }
+
+        this.loading.addChild(cc)
+
         this.container.addChild(this.loading)
         this.app.stage.addChild(this.container)
         this.resize()

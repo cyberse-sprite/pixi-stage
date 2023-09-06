@@ -20,7 +20,7 @@ export default class SceneSelectMap extends Scene {
                 text:item.text, w:192, h:96
             })
             button.onPress.connect(() => {
-                exhi.loading.visible = true
+                exhi.setLoading()
                 ApiGetMap(item.src).then((res) => {
                     exhi.loadScene(new SceneStage(exhi, player, res as unknown as PsMap))
                 })
@@ -33,6 +33,6 @@ export default class SceneSelectMap extends Scene {
         con.x = (abw - con.width) / 2
         con.y = (abh - con.height) / 2
         this.addChild(con)
-        exhi.loading.visible = false
+        exhi.cancelLoading()
     }
 }
